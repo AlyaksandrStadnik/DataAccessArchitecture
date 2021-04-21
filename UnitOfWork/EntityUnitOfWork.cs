@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessArchitecture.UnitOfWork
 {
-	public class UnitOfWork : IUnitOfWork 
+	public class EntityUnitOfWork : IUnitOfWork 
 	{
 		private readonly DbContext _dbContext;
 		private readonly Dictionary<Type, object> _repositories;
 
 
-		public UnitOfWork(DbContext dbContext)
+		public EntityUnitOfWork(DbContext dbContext)
 		{
 			_dbContext = dbContext;
 			_repositories = new Dictionary<Type, object>();
@@ -23,7 +23,7 @@ namespace DataAccessArchitecture.UnitOfWork
 		{
 			if (_repositories.TryGetValue(typeof(TEntity), out var repository))
 			{
-				repository = new Repository<TEntity>(_dbContext);
+				repository = new EntityRepository<TEntity>(_dbContext);
 				_repositories[typeof(TEntity)] = repository;
 			}
 			return (IRepository<TEntity>)repository;

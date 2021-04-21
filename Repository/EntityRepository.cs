@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace DataAccessArchitecture.Repository
 {
-	public class Repository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
+	public class EntityRepository<TEntity> : IRepository<TEntity> where TEntity : class, IEntity
 	{
 		protected readonly DbContext _context;
 
 		private readonly DbSet<TEntity> _aggregate;
 
-		public Repository(DbContext context)
+		public EntityRepository(DbContext context)
 		{
 			_context = context;
 			_aggregate = _context.Set<TEntity>();

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>DataAccessArchitecture.Raccoon.lab</id>
+    <version>1.2.0</version>
+    <title>DataAccessArchitecture</title>
+    <authors>AlyaksandrStadnik</authors>
+    <owners>AlyaksandrStadnik</owners>
+    <projectUrl>https://github.com/AlyaksandrStadnik/DataAccessArchitecture/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generalized patterns for providing template business logic for constructing data access layer.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Raccoon.lab</copyright>
+    <tags></tags>
+  </metadata>
+  <files>
+	<file src="bin\Release\net5.0\DataAccessArchitecture.dll" target="lib\net50\DataAccessArchitecture.dll"/>
+  </files>
+</package>
